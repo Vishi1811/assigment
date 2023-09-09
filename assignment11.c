@@ -175,6 +175,135 @@ void f6(int a,int b)
 
     }
 }
+#QN 7.
+#include<stdio.h>
+void f7(int);
+int main()
+{
+    int x;
+    printf("Ente a number : ");
+    scanf("%d",&x);
+    f7(x);
+}
+void f7(int x)
+{
+    int i,a=-1,b=1,c;
+    for(i=1;i<=x;i++)
+    {
+        c=a+b;
+        a=b;
+        b=c;
+        printf("%d ",c);
+    }
+}
+#Qn 8.
+//8. Write a function to print PASCAL Triangle. (TSRN)
+#include<stdio.h>
+int fact(int);
+int combination (int,int);
+void Pascal(int);
+int fact(int n)
+{
+    int fact=1,i;
+    for(i=n;i>=1;i--)
+    {
+        fact=fact*i;
+    }
+    return fact;
+}
+int combination (int n,int r )
+{
+    int nCr;
+    nCr=fact(n)/(fact(n-r)*fact(r));
+    return nCr;
+}
+void Pascal(int a)
+{
+    int i,j,k,r;
+    for(i=1;i<=a;i++)
+    {
+        k=1;
+        r=0;
+        for(j=1;j<=2*a-1;j++)
+        {
+            if(j>a-i&&j<a+i&&k==1)
+            {
+                printf("%3d",combination(i-1,r));
+                k=0;
+                r++;
+            }
+
+            else
+            {
+              printf("   ");
+                k=1;
+            }
+
+        }
+        printf("\n");
+    }
+}
+int main()
+{
+    int a;
+    printf("Enter a number:");
+    scanf("%d",&a);
+    Pascal(a);
+    return 0;
+}
+#QN 9.
+#include<stdio.h>
+void f7(int);
+int main()
+{
+    int x;
+    printf("Ente a number : ");
+    scanf("%d",&x);
+    f7(x);
+}
+void f7(int x)
+{
+    int i,a=-1,b=1,c;
+    for(i=1;i<=x;i++)
+    {
+        c=a+b;
+        a=b;
+        b=c;
+        printf("%d ",c);
+    }
+}
+#Qn 10.
+//10.Write a program in C to find the sum of the series 1! /1+2! /2+3! /3+4! /4+5! /5 using the function.
+#include<stdio.h>
+int fact(int);
+int Sum(int);
+int fact(int n)
+{
+    int fact=1,i;
+    for(i=n;i>=1;i--)
+    {
+        fact=fact*i;
+    }
+    return fact;
+}
+int Sum(int n)
+{
+    int i,sum=0;
+    for(i=1;i<=n;i++)
+    {
+        sum=sum+(fact(i-1));
+    }
+    return sum;
+}
+int main()
+{
+    int n;
+    printf("Enter a number:");
+    scanf("%d",&n);
+    printf("Sum of series is %d",Sum(n));
+    return 0;
+}
+
 
 
 
